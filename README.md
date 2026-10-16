@@ -82,8 +82,3 @@ Quy trình từ lúc thu thập tín hiệu thô đến khi ra quyết định k
 
 ---
 
-## ⚠️ 6. Lưu ý vận hành an toàn hệ thống
-- Kiểm tra định kỳ nguồn điện $12\text{V}$ cấp cho van điện từ để tránh hiện tượng sụt áp.
-- **Xử lý sự cố tràn RAM do lưu trữ nhật ký (Log Full):** 
-  - Khi RAM bị đầy do lưu quá nhiều dữ liệu cảm biến, hệ thống có thể bị treo. 
-  - *Cách xử lý an toàn:* Tiến hành cấu hình cơ chế tự động xoay vòng file log (`logrotate`) hoặc định kỳ xuất file log cũ ra thẻ nhớ SD/Cloud, sau đó thực hiện lệnh xóa cache bộ nhớ tạm (`sudo sync && sudo sysctl -w vm.drop_caches=3`) để giải phóng không gian RAM mà không làm mất nguồn nuôi cảm biến.
